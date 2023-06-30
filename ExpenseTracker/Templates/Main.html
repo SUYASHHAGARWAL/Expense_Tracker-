@@ -12,22 +12,51 @@
     <main class="container mx-auto min-h-screen ">
     <section class="section4" id="section4">
            <div class="bbox ">
+            <h2>Write Expense</h2>
                 <div class="box font">
-                    <form action="/api/submitexpense " method="post" enctype="multipart/form-data">{% csrf_token %}
-                    <div class="inpbox flex flex-col">
-                        <input class="inpcontent" type="text" name="Amount" id="Amount" placeholder="Amount you have Spent" required>
-                        <input class="inpcontent" type="text" name="where" id="where" placeholder="Where you have spent?" required>
-                        <input class="inpcontent" type="text" name="why" id="why" placeholder="Why you spent?" required>
-                        <input class="inpcontent" type="text" name="date_day" id="date_day" placeholder="Enter date of expenditure" required>
-                        <input class="inpcontent" type="text" name="date_month" id="date_month" placeholder="Enter month of expenditure" required>
-                        <input class="inpcontent" type="text" name="date_year" id="date_year" placeholder="Enter year of expenditure" required>
-                        <input class="inpcontent" type="text" name="time" id="time" placeholder="Enter time of expenditure" required>
-                        <input class="inpcontent" type="text" name="category" id="category" placeholder="Category of expenditure(Urgent, helped a friend, wasted etc)" required>
-                        <input class="inpcontent" type="text" name="wasitneeded" id="wasitneeded" placeholder="Needed? (YEs/No)" required>
-                        <input class=" btnsub items-center" type="submit" name="submit" id="submit">
-                        <span>{{message}}</span>
-                    </div>
-                </form>
+                    <form action="/api/submitexpense" method="post" enctype="multipart/form-data">{%csrf_token%}
+                        <div class="expense-area">
+                            <div class="input-box">
+                                <label for="amount" class="lbl">Amount</label>
+                                <input type="text" name="amount" id="amount" placeholder="Enter amount you have spent" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="where" class="lbl">Where</label>
+                                <input type="text" name="where" id="where" placeholder="Enter where have you spent" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="why" class="lbl">Why</label>
+                                <input type="text" name="why" id="why" placeholder="Why you spent it" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="date_day" class="lbl">Day</label>
+                                <input type="text" name="date_day" id="date_day" placeholder="Enter date of expenditure" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="month" class="lbl">Month</label>
+                                <input type="text" name="date_month" id="date_month" placeholder="Enter month of expenditure" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="date_year" class="lbl">Year</label>
+                                <input type="text" name="date_year" id="date_year" placeholder="Enter year of expenditure" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="time" class="lbl">Time</label>
+                                <input type="time" name="time" id="time" placeholder="Enter time of expenditure" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="category" class="lbl">Category</label>
+                                <input type="text" name="category" id="category" placeholder="Category of expenditure (Urgent, helped a friend, wasted, etc)" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="wasitneeded" class="lbl">Was it needed</label>
+                                <input type="text" name="wasitneeded" id="wasitneeded" placeholder="Needed (Yes/No)" required>
+                            </div>
+                            
+                        </div>
+                        <button class="smit_btn" type="submit">Submit</button>
+                    </form>
+                <span class="final_msg">{{message}}</span>
                 </div>
             </div>
             </div>

@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:ital,wght@0,300;1,100&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
 }
-.container{
+
+.container {
     max-width: 90vw;
 }
 
-.navcls{
+.navcls {
     position: fixed;
     width: 100%;
     top: 0;
@@ -17,161 +19,354 @@
     transition: all .5s;
 
 }
-.navbar{
+
+.navbar {
     display: flex;
     height: 60px;
     font-family: 'Open Sans', sans-serif;
 }
-.navbar li{
+
+.navbar li {
     list-style: none;
     margin: 0 12px;
-    
+
 }
-.topleft{
+
+.topleft {
     width: 50%;
     /* height: 50vh; */
 }
 
-.topright{
+.topright {
     width: 50%;
     height: 50vh;
-   
+
 }
 
-.section1{
+.section1 {
     height: 100vh;
-    
+
 }
-.imgsec1{
+
+.imgsec1 {
     height: 195%;
     width: 100%;
     margin-left: 5%;
 
 }
-.section2{
+
+.section2 {
     background-color: rgb(201, 208, 231);
-   
-}
-.styles{
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
+
 }
 
-.boxe{
+.boxe {
     margin: 12px 22px;
     width: 450px;
 }
-.font{
+
+.font {
     font-size: 30px;
 }
-.font-nav{
+
+.font-nav {
     font-size: 22px;
 }
-.about{
+
+.about {
     height: 50vh;
 }
-.contact{
+
+.contact {
     height: 75vh;
 }
-.section3{
+
+.section3 {
     height: 30vh;
-    background-color:rgb(85, 81, 81) ;
+    background-color: rgb(85, 81, 81);
 }
-.section3 li{
+
+.section3 li {
     list-style: none;
     margin-top: 5px;
     margin-left: 10%;
     color: #fff;
 }
-.section3 ul{
+
+.section3 ul {
     padding: 20px;
 }
 
-.ft1{
-    margin-bottom: 12px;
-}
-.ft2{
-margin-bottom: 12px;
-}
-.ft3{
+.ft1 {
     margin-bottom: 12px;
 }
 
-.ft4{
+.ft2 {
     margin-bottom: 12px;
 }
-.section4{
+
+.ft3 {
+    margin-bottom: 12px;
+}
+
+.ft4 {
+    margin-bottom: 12px;
+}
+
+.section4 {
     background-color: rgb(176, 219, 212);
 }
+
 /* .navcls{
     background-color: rgb(215, 191, 231);
 } */
-.text-bluee{
+.text-bluee {
     color: rgb(40, 44, 92);
 }
-.inpbox{
+
+.inpbox {
     padding: 20px;
     margin-left: 8%;
     margin: 10px;
     /* border: solid black 2px; */
 }
-.inpcontent{
+
+.inpcontent {
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
-    
+
 }
 
-.btnsub{
+.btnsub {
     padding: 12px 20px;
     border: 2px solid rgb(95, 11, 151);
     border-radius: 8px;
     color: blueviolet;
-    background:transparent;
+    background: transparent;
     margin: 5px;
     margin-top: 10%;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     font-size: 16px;
     cursor: pointer;
     transition: .5s;
     text-align: center;
 }
-.btnsub:hover{
+
+.btnsub:hover {
     color: wheat;
     background-color: blueviolet;
 }
 
-.min-h-screen{
+.min-h-screen {
     margin-top: 4rem;
 }
 
-.navbar-scrolled{
+.navbar-scrolled {
     background-color: rgb(215, 191, 231);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
-.inpcontent{
+
+.inpcontent {
     border: none;
     outline: none;
-    background:transparent;
+    background: transparent;
     border-bottom: 2px solid gray;
     border-radius: 2px;
     color: rgb(67, 65, 65);
     font-size: 14px;
 }
-.list-itms{
+
+.list-itms {
     cursor: pointer;
 }
-.list-itms:hover{
+
+.list-itms:hover {
     color: blueviolet;
     border-bottom: 2px solid blueviolet;
 }
-.list-itms a{
+
+.list-itms a {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-.list-itms a:hover{
+
+.list-itms a:hover {
     color: blueviolet;
     border-bottom: 2px solid blueviolet;
+}
+
+.login-container {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4%;
+    left: 20%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40rem;
+    height: 40rem;
+    border: 2px solid white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 2rem;
+    /* transform: rotateY(180deg); */
+}
+
+.close-btn {
+    position: relative;
+    left: 52%;
+    border: 2px solid gray;
+    background-color: gray;
+    border-radius: 50%;
+    color: white;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 1.6rem;
+    cursor: pointer;
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    ;
+
+}
+
+.login-area {
+    display: flex;
+    flex-direction: column;
+    min-width: 20rem;
+    margin-top: 4rem;
+}
+.login-area label{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins';
+
+}
+
+.login-area input {
+    width: 100%;
+    height: 2.2rem;
+    /* border-bottom: 2px solid #bdbdbd; */
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 0px;
+    margin-bottom: 50px;
+    border: none;
+    border-bottom: 2px solid #bdbdbd;
+    margin-top: 20px;
+
+}
+
+.log-in {
+    width: 21rem;
+    background-color: black;
+    color: white;
+    height: 1.8rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 12px;
+    margin-bottom: 15px;
+}
+.new-user{
+    margin-top: 2rem;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.3rem;
+    color: blue;
+    transition: .3s;
+}
+.new-user:hover{
+    cursor: pointer;
+    color: purple;
+    border-bottom: 1px solid purple;
+}
+.containing {
+
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(90, 90, 90, 0.5);
+    z-index: 9999;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+
+}
+.signin-container{
+    background-color: white;
+    position: absolute;
+    top: 4%;
+    left: 20%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40rem;
+    height: 40rem;
+    border: 2px solid white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 2rem;
+    transform: rotateY(180deg);
+    display: none;
+}
+
+.signin-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.input-box{
+    margin: 20px 0px 12px 0px;
+    width: 18rem;
+
+}
+.input-box input{
+    width: 100%;
+    height: 2.2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    margin-top: 5px;
+    
+}
+
+.input-box label{
+    font-size:18px;
+    font-weight: 500;
+    color: #494646;
+    font-family: 'Poppins', sans-serif;
+}
+.signin-container h2 {
+    font-family: 'Poppins', sans-serif;
+}
+.sign-in{
+    width: 21rem;
+    background-color: black;
+    color: white;
+    height: 1.8rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 145px;
+    margin-top: 25px;
 }
