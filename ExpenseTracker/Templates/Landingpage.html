@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Ideal to save</title>
+    <link rel="stylesheet" href="/static/css/Landingpage.css">
+    <link rel="stylesheet" href="/static/css/utils.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       
+</head>
+<body >
+    <div class="container mx-auto ">
+        <header>
+            <nav class="flex justify-between navcls ">
+                <div class="font-bold flex items-center text-bluee ft2rem">ExpenseTracker</div>
+                <ul class="navbar flex items-center font-nav font-bold">
+                    <li class="list-itms" id="home">Home</li>
+                    <li class="list-itms" id="about">About</li>
+                    <li class="list-itms" id="see-demo">See Demo</li>
+                    <li class="list-itms" id="contact">Contact</a></li> 
+                    <li><Button class="btn flex items-center box centerAlign" data-toggle="modal" data-target="#myModal">Login/Signup</Button></li>
+                </ul>
+            </nav>
+            <hr>
+        </header>
+        <main class="min-h-screen ">
+            <section class="section1">
+                <div class="flex">
+                <div class="topleft flex items-center flex-col px-2">
+                    <h1 class="my-1 ">Spend your Money Wisely</h1>
+                    <p class="font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem saepe dolorum alias quam exercitationem dicta quasi nostrum maiores assumenda officiis commodi, vero neque praesentium, expedita ducimus sint eius amet architecto? Laudantium magnam fugit qui aut autem nihil dolorem cum unde, nam voluptatem accusantium quia minima, exercitationem molestias odit hic ea.</p>
+                </div>
+                <div class="topright">
+                    <img src="/static/logo1.png" class="imgsec1" alt="">
+                </div>
+            </div>
+            </section>
+            <hr>
+            <section class="section2" >
+                <h1 class="flex justify-center my-2 text-blue ">About</h1>
+                <div class="boxee font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nulla, ducimus earum vitae repellendus aliquam! Veritatis, maxime optio libero totam eaque doloribus ex.</div>
+                <div class="boxes flex about">
+                    <div class="boxee"><img src="" alt=""></div>
+                </div>
+            </section>
+            <hr>
+            <section class="section4" id="section4">
+                <div class="boxes flex justify-center my-2 contact">
+                    <div class="bbox">
+                        <h4 class="flex justify-center text-blue">Demo</h4>
+                    <div class="boxee font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nulla, ducimus earum vitae repellendus aliquam! Veritatis, maxime optio libero totam eaque doloribus ex.</div></div>
+                    <div class="bbox ">
+                        <h4 class="flex justify-center text-blue">Contact Me</h4>
+                    <div class="boxee font">
+                        Fill the form below if you have any queries, or some feedback to give. 
+                        <div class="inpbox flex flex-col">
+                            <input class="inpcontent" type="text" name="name" id="name" placeholder="Your Name" required>
+                            <input class="inpcontent" type="email" name="name" id="name" placeholder="Your Email" required>
+                            <input class="inpcontent" type="text" name="name" id="name" placeholder="Mobile Number" >
+                            <input class="inpcontent" type="text" name="name" id="name" placeholder="Your Query/Suggestion" required>
+                            <input class="inpcontent" type="text" name="name" id="name" placeholder="Overall Feedback" required>
+                            <input class=" btnsub items-center" type="submit" name="submit" id="submit">
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <hr>
+        </main>
+        <footer class="section3">
+            <div class=" flex justify-between">
+                <div class="">
+                    <ul>
+                        <li class="font-bold ft2">About</li>
+                        <li>Benifits</li>
+                        <li>Purpose</li>
+                        <li>Motive</li>    
+                    </ul>
+                </div>
+                <div class="">
+                    <ul>
+                        <li class="font-bold ft3">Legal</li>
+                        <li>Terms & Conditions</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Use</li>    
+                    </ul>
+                </div>
+                <div class="developer-info">
+                    <ul>
+                        <li class="font-bold ft4">Contact Developer</li>
+                        <li class="ft4-items"><a href="suyash1606.agarwal@gmail.com">Email</a></li>
+                        <li class="ft4-items"><a href="https://www.linkedin.com/in/suyash-agarwal-847362224/">Developer Linkedin</a></li>
+                        <li class="ft4-items"><a href="https://www.linkedin.com/in/yash-agarwal-2bb83423b/">Designer Linkedin</a></li>
+                        <li class="ft4-items"><a href="suyash1606.agarwal@gmail.com">Github</a></li>
+                        <li class="ft4-items">Mob: +91 8085735401</li>  
+                        <li class="ft4-items">Mob: +91 8889264980</li>   
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Select City</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body"  class="close styles" data-dismiss="modal">  
+                    <div class="inpbox flex flex-col">
+                        <input class="inpcontent" type="text" name="Amount" id="Amount" placeholder="Amount you have Spent" required>
+                        <input class="inpcontent" type="text" name="where" id="where" placeholder="Where you have spent?" required>
+                        <button type="submit " class="btnsub">Login</button>
+                    </div>   
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+    
+</body>
+<script src="/static/css/landingpage.js"></script>
+</html>
