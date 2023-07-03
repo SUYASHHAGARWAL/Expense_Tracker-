@@ -14,7 +14,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <script>
+$(document).ready(function () {
+            
+          
+            $('#btn').click(function () {
+                var phn = $('#phone').val();
+                var psw = $('#password').val();
+                
+                console.log(phn,psw)
+                $.getJSON('http://localhost:8000/api/session',{phone:phn,password:psw},function(data){ 
+                    
+                window.location.href = `http://localhost:8000/api/checkuserlogin?phone=${phn}&password=${psw}`
+            }) 
+        })
+    })
+      </script>
 </head>
 
 <body>
@@ -157,8 +175,8 @@
         <div class="containing">
             <div class="signin-container">
                 <button class="close-btn">x</i></button>
-                <h2>Log in</h2>
-                <form action="#">
+                <h2>Sign up</h2>
+                <form action="/api/userdataindb" method="post">
                     <div class="signin-area">
                         <div class="input-box">
                             <label for="username" class="lbl">Username</label>
@@ -170,7 +188,11 @@
                         </div>
                         <div class="input-box">
                             <label for="phone" class="lbl">Phone</label>
-                            <input type="number" name="phone" id="phone" placeholder="Enter phone" required></input>
+                            <input type="number" name="phone" id="phone1" placeholder="Enter phone" required></input>
+                        </div>
+                        <div class="input-box">
+                            <label for="phone" class="lbl">Password</label>
+                            <input type="number" name="password" id="password1" placeholder="Create Password" required></input>
                         </div>
                         <div class="input-box">
                             <label for="city" class="lbl">City</label>
@@ -178,7 +200,7 @@
                         </div>
                         <div class="input-box">
                             <label for="balance" class="lbl">Balance</label>
-                            <input type="number" name="balance" id="balance" placeholder="Enter balance" required></input>
+                            <input type="number" name="Balance" id="Balance" placeholder="Enter balance" required></input>
                         </div>
                         <div class="input-box">
                             <label for="date" class="lbl">Date</label>
@@ -190,31 +212,32 @@
                         </div>
                         <div class="input-box">
                             <label for="limit" class="lbl">Limit</label>
-                            <input type="number" name="limit" id="limit" placeholder="Enter limit" required></input>
+                            <input type="number" name="Limit" id="Limit" placeholder="Enter limit" required></input>
                         </div>
                         <div class="input-box">
                             <label for="profession" class="lbl">Profession</label>
-                            <input type="text" name="profession" id="profession" placeholder="Enter profession" required></input>
+                            <input type="text" name="Proffesion" id="Proffesion" placeholder="Enter profession" required></input>
                         </div>
                         <div class="input-box">
                             <label for="age" class="lbl">Age</label>
-                            <input type="number" name="age" id="age" placeholder="Enter age" required></input>
+                            <input type="number" name="Age" id="Age" placeholder="Enter age" required></input>
                         </div>
                     </div>
-                    <button class="sign-in">Sign In</button>
+                    <button class="sign-in">Sign Up</button>
                 </form>
             </div>
             <div class="login-container">
                 <button class="close-btn">x</i></button>
                 <h2>Log in</h2>
                 <div class="login-area">
-                    <label for="email" class="lbl">Email</label>
-                    <input type="email" name="email" id="email2" placeholder="Enter email"></input>
+                    <label for="" class="lbl">phone</label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter phone"></input>
                     <label for="Password" class="lbl">Password</label>
-                    <input type="password" name="email" id="pwd" placeholder="Enter password"></input>
+                    <input type="text" name="password" id="password" placeholder="Enter password"></input>
                 </div>
-                <button class="log-in">Log In</button>
+                <button class="log-in" id="btn">Log In</button>
                 <button class="new-user">New User?</button>
+                
             </div>
         </div>
     </div>

@@ -16,6 +16,7 @@
                 <div class="box font">
                     <form action="/api/submitexpense" method="post" enctype="multipart/form-data">{%csrf_token%}
                         <div class="expense-area">
+                            <div></div>
                             <div class="input-box">
                                 <label for="amount" class="lbl">Amount</label>
                                 <input type="text" name="amount" id="amount" placeholder="Enter amount you have spent" required>
@@ -52,7 +53,10 @@
                                 <label for="wasitneeded" class="lbl">Was it needed</label>
                                 <input type="text" name="wasitneeded" id="wasitneeded" placeholder="Needed (Yes/No)" required>
                             </div>
-                            
+                            <div class="input-box">
+                                <label for="wasitneeded" class="lbl">User Id</label>
+                                <input type="text" name="userid" id="userid" placeholder="{{record}}" value="{{record}}" required>
+                            </div>
                         </div>
                         <button class="smit_btn" type="submit">Submit</button>
                     </form>

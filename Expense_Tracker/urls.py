@@ -16,11 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from ExpenseTracker import views
+from ExpenseTracker import Dashboardview
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/expensetrackerlanding',views.LandingPage),
     re_path(r'^api/submitexpensepage',views.Expensepage),
     re_path(r'^api/submitexpense',views.SubmitExpense),
     re_path(r'^api/dashboard',views.Dashboard),
+    re_path(r'^api/filldata',views.Filldata),
+    re_path(r'^api/userdataindb',views.Userdata),
+    re_path(r'^api/checkuserlogin',views.CheckUserLogin),
+    re_path(r'^api/session',views.session),
+    # re_path(r'^api/editdeleterecord',Dashboardview.),
+
 
 ]

@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker - Ideal to save</title>
     <link rel="stylesheet" href="/static/css/Dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+          
+            $('#showdatabtn').click(function () {
+                $.getJSON('http://localhost:8000/api/filldata',function(data){ 
+                    console.log(data)
+                    $('#sectdisplay').css('display','block')
+                    for (i=0;i<data.length;i++){
+                        $("#tablebody").html('')
+                        $('#tablebody').append(`<tr>
+                      <th scope="row">${data[i].id}</th>
+                         <th >{{userdata.phone}}</th>
+                         <td>${data[i].Amount}</td>
+                          <td>${data[i].where}</td>
+                         <td>${data[i].Why}</td>
+                         <td>${data[i].date_day}/${data[i].date_month}/${data[i].date_year}</td>
+                         <td>${data[i].time}</td>
+                         <td>${data[i].category}</td>
+                         <td>${data[i].wasitneeded}</td>
+                         <td>delete</td>
+                       </tr>`
+                       )
+                    }
+            }) 
+        })
+    })
+    </script>
  </head>
 <body >
     <div class="container mx-auto ">
@@ -36,7 +67,9 @@
                 </div>
                 <div class="section1">
                     <div class="font-bold font">
-                        hello
+                        Welcome back {{data.username}} <br>
+                        Your id is   {{data.id}} <br>
+                        Set Limit is  {{data.Limit}}
                     </div>
                 </div>
             </section>
@@ -49,17 +82,43 @@
                 </div>
                 <div class="section2div2">
                     <div class="font-bold font">
-                        hello
+                        {{userdata.phone}}
                     </div>
                 </div>
             </section>
             
             <section class="flex btnmargin justify-align" >
-                <div><button class="btnsub divbtn">Show Records</button></div>
+                <div><button id="showdatabtn">Show Records</button></div>
                 <div><a href="/api/submitexpensepage"><button class="btnsub divbtn">Submit an Entry</button></a></div>
             </section>
             
         </main>
+        <section style="display: none;" id="sectdisplay">
+            <div class="table">
+            <div class="col-md-12 headingtext">
+                <!-- <img src="/static/logo.png" class="imgtable"> -->
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">S No.</th>
+                        <th scope="col">Email address</th>                      
+                      <th scope="col">Amount</th>
+                      <th scope="col">Where</th>
+                      <th scope="col">Why</th>
+                      <th scope="col">When</th>
+                      <th scope="col">Time </th>
+                      <th scope="col">Category</th>
+                      <th scope="col">WasitNeeded</th>
+                     
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+                    
+                </tbody>
+            </table>
+        </div>
+        </section>
         <footer class="section3">
             <div class=" flex justify-between">
                 <div class="">

@@ -15,6 +15,7 @@ class User(models.Model):
     Age = models.CharField(max_length=60,blank=False,default='')
 
 class Expense(models.Model):
+    userid = models.CharField(max_length=20, blank=False, default='')
     Amount = models.CharField(max_length=60,blank=False,default='')
     where = models.CharField(max_length=60,blank=False,default='')
     Why = models.CharField(max_length=60,blank=False,default='')

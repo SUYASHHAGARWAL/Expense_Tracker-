@@ -217,3 +217,48 @@ margin-bottom: 12px;
 .textnone{
     text-decoration: none;
 }
+.table{
+    margin: 2rem;
+    padding: 3rem;
+    width: 80vw;
+}
+
+
+
+
+
+.maincontainer{
+    width: 100vw;
+    height: 100vh;
+    background: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box{
+    background: #fff;
+    width: 98vw;
+    height: 80vh;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+  .headingtext{
+    font-size: 22px;
+    font-family: Poppins;
+    font-weight: bold;
+    padding: 5px;
+    letter-spacing: 1px;
+  }
+  .labelstyle{
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .imgtable{
+    width: 60px; 
+    height: 50px; 
+    padding-right: 8px;
+  }
