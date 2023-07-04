@@ -6,6 +6,7 @@ from ExpenseTracker.serializer import ExpenseSerializer
 from ExpenseTracker.serializer import UserSerializer
 from django.db import connection
 from django.http.response import JsonResponse
+from django.shortcuts import redirect
 
 # Create your views here.
 @api_view(['GET','POST','DELETE'])
@@ -110,3 +111,15 @@ def CheckUserLogin(req):
                 return render(req,"DashBoard.html",{'data':record[0],'userdata':userdata})
     except Exception as e:
         print(e)
+
+
+@api_view(['GET','POST','DELETE']) 
+def EditDelete(req):
+    try:
+     if req.method == 'GET' :
+        vehicle = Expense.objects.get(pk=req.GET['id'])
+        vehicle.delete()
+        return redirect('/api/filldata')
+    except Exception as e:
+        print(e)
+        return redirect('/api/filldata')

@@ -27,6 +27,8 @@ urlpatterns = [
     re_path(r'^api/userdataindb',views.Userdata),
     re_path(r'^api/checkuserlogin',views.CheckUserLogin),
     re_path(r'^api/session',views.session),
+    re_path(r'^api/editentry',views.EditDelete),
+    
     # re_path(r'^api/editdeleterecord',Dashboardview.),
 
 
