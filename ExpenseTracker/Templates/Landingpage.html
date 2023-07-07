@@ -21,14 +21,13 @@
 $(document).ready(function () {
             
           
-            $('#btn').click(function () {
+            $('#lgbtn').click(function () {
                 var phn = $('#phone').val();
                 var psw = $('#password').val();
                 
                 console.log(phn,psw)
                 $.getJSON('http://localhost:8000/api/session',{phone:phn,password:psw},function(data){ 
-                    
-                window.location.href = `http://localhost:8000/api/checkuserlogin?phone=${phn}&password=${psw}`
+                    window.location.href = `http://localhost:8000/api/checkuserlogin?phone=${phn}&password=${psw}`
             }) 
         })
     })
@@ -235,7 +234,7 @@ $(document).ready(function () {
                     <label for="Password" class="lbl">Password</label>
                     <input type="text" name="password" id="password" placeholder="Enter password"></input>
                 </div>
-                <button class="log-in" id="btn">Log In</button>
+                <button class="log-in" id="lgbtn">Log In</button>
                 <button class="new-user">New User?</button>
                 
             </div>

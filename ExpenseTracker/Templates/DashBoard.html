@@ -15,9 +15,11 @@
             $('#showdatabtn').click(function () {
                 $.getJSON('http://localhost:8000/api/filldata',function(data){ 
                     console.log(data)
+                    console.log(data.length)
                     $('#sectdisplay').css('display','block')
+                    $("#tablebody").html('')
+
                     for (i=0;i<data.length;i++){
-                        $("#tablebody").html('')
                         $('#tablebody').append(`<tr>
                       <th scope="row">${data[i].id}</th>
                          <th >{{userdata.phone}}</th>
@@ -52,17 +54,18 @@
             </nav>
             
         </header>
+        {{message}}
         <main class=" min-h-screen ">
             <section class="flex justify-between">
                 <div class="section1">
                     <div class="font-bold font">
-                        Money spent this month <br> {{data.total}}
+                        Money spent this month <br> {{userdata.amount}}
                       </div>
                 </div>
                 
                 <div class="section1">
                     <div class="font-bold font">
-                        hello
+                        Money left for this month <br> {{userdata.rem}}
                     </div>
                 </div>
                 <div class="section1">

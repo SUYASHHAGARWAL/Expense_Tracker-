@@ -16,7 +16,7 @@ def LandingPage(req):
 @api_view(['GET','POST','DELETE'])
 def session(req):
     try:
-        userdata = {'phone':req.GET['phone'],'password':req.GET['password']}
+        userdata = {'phone':req.GET['phone'],'password':req.GET['password'],'amount':'0','rem':'0'}
         req.session["USERDATA"] = userdata
         print(userdata)
         return JsonResponse(userdata, safe=False)
@@ -59,7 +59,7 @@ def Filldata(req):
  try:
     if req.method == 'GET':
         print("\n\n\nNEW INTERFACE")
-        q = " select * from expensetracker_expense where id = {0}".format(p)    
+        q = " select * from expensetracker_expense where userid = {0}".format(p)    
         print("this is new interface")
         cursor = connection.cursor()
         cursor.execute(q)
@@ -80,15 +80,13 @@ def Userdata(req):
             userdata = UserSerializer(data=req.data)
             if userdata.is_valid():
                 userdata.save()
-                return render(req,"DashBoard.html")
+                return render(req,"Login.html")
     except Exception as e:
-        return render(req,"Landingpage.html",{'message':"Fail to Submit Record"})
+        return render(req,"Landingpage.html")
         
 
 @api_view(['GET','POST','DELETE']) 
 def CheckUserLogin(req):
-
-
     try:
         if req.method == 'GET':
             print(1)
@@ -104,7 +102,26 @@ def CheckUserLogin(req):
             # print("\n\n",record[0]['id'])
             global p 
             p = record[0]['id']
-            q="select "
+            
+            qry="select sum(Amount) from expensetracker_expense where userid={0}".format(p)
+            print(qry)
+            cursors = connection.cursor()
+            cursors.execute(qry)
+            print(1)
+            print(2)
+            rec = tuple_to_dict.ParseDictSingleRecord(cursors)
+            print(rec.get('sum(Amount)'))
+            if(rec.get('sum(Amount)') == None):
+                rec['sum(Amount)'] = 0
+                userdata['amount'] = rec['sum(Amount)']
+                userdata['rem'] = int(record[0]['Limit']) - int(rec['sum(Amount)'])
+                return render(req,'DashBoard.html',{'data':record[0],'userdata':userdata,'message':'As you are a new user, you do not have any entry. Kindly submit one'})
+
+            else:
+                userdata['amount'] = rec['sum(Amount)']
+                userdata['rem'] = int(record[0]['Limit']) - int(rec['sum(Amount)'])
+            # print(type(rec['sum(Amount)']))
+            print(3)
             if(len(record)==0):
                 return render(req,"Landingpage.html")
             else:
@@ -123,3 +140,4 @@ def EditDelete(req):
     except Exception as e:
         print(e)
         return redirect('/api/filldata')
+    
