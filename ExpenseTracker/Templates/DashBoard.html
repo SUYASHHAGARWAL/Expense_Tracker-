@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker - Ideal to save</title>
     <link rel="stylesheet" href="/static/css/Dashboard.css">
+    <link rel="stylesheet" href="/static/css/table.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js" ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,13 +44,13 @@
     <div class="container mx-auto ">
         <header>
             <nav class="flex justify-between navcls">
-                <div class="font-bold flex items-center text-bluee ft2rem textnone"><a href="">ExpenseTracker</a></div>
+                <div class="font-bold flex items-center text-bluee ft2rem textnone"><a href="" id="logo-part">ExpenseTracker</a></div>
                 <ul class="navbar flex items-center font-nav font-bold">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>See Demo</li>
-                    <li><a href="#section4">Contact</a></li> 
-                    <li>{{data.username}}</li>
+                    <li class="list-itms"><a href="#section4">Home</a></li>
+                    <li class="list-itms"><a href="#section4">About</a></li>
+                    <li class="list-itms"><a href="#section4">See Demo</a></li>
+                    <li class="list-itms"><a href="#section4">Contact</a></li> 
+                    <li class="list-itms">{{data.username}}</li>
                 </ul>
             </nav>
             
@@ -91,17 +92,18 @@
             </section>
             
             <section class="flex btnmargin justify-align" >
-                <div><button id="showdatabtn">Show Records</button></div>
+                <div><button id="showdatabtn" class="sdb">Show Records</button></div>
                 <div><a href="/api/submitexpensepage"><button class="btnsub divbtn">Submit an Entry</button></a></div>
             </section>
             
         </main>
         <section style="display: none;" id="sectdisplay">
-            <div class="table">
-            <div class="col-md-12 headingtext">
-                <!-- <img src="/static/logo.png" class="imgtable"> -->
-            </div>
-            <table class="table table-hover">
+            <div class="table table-part">
+                <div class="col-md-12 headingtext">
+                    <!-- <img src="/static/logo.png" class="imgtable"> -->
+                </div>
+                <h2 class="font">History</h2>
+            <table class="table table-hover content-table">
                 <thead>
                     <tr>
                         <th scope="col">S No.</th>
@@ -123,13 +125,13 @@
         </div>
         </section>
         <footer class="section3">
-            <div class=" flex justify-between">
+            <div class=" flex justify-between footer-class">
                 <div class="">
                     <ul>
                         <li class="font-bold ft2">About</li>
                         <li>Benifits</li>
                         <li>Purpose</li>
-                        <li>Motive</li>    
+                        <li>Motive</li>
                     </ul>
                 </div>
                 <div class="">
@@ -137,20 +139,25 @@
                         <li class="font-bold ft3">Legal</li>
                         <li>Terms & Conditions</li>
                         <li>Privacy Policy</li>
-                        <li>Terms of Use</li>    
+                        <li>Terms of Use</li>
                     </ul>
                 </div>
-                <div class="">
+                <div class="developer-info">
                     <ul>
                         <li class="font-bold ft4">Contact Developer</li>
-                        <li>Email</li>
-                        <li>LinkedIn</li>
-                        <li>GitHub</li>
-                        <li>Mob: +91 8085735401</li>    
+                        <li class="ft4-items"><a href="suyash1606.agarwal@gmail.com">Email</a></li>
+                        <li class="ft4-items"><a href="https://www.linkedin.com/in/suyash-agarwal-847362224/">Developer
+                                Linkedin</a></li>
+                        <li class="ft4-items"><a href="https://www.linkedin.com/in/yash-agarwal-2bb83423b/">Designer
+                                Linkedin</a></li>
+                        <li class="ft4-items"><a href="suyash1606.agarwal@gmail.com">Github</a></li>
+                        <li class="ft4-items">Mob: +91 8085735401</li>
+                        <li class="ft4-items">Mob: +91 8889264980</li>
                     </ul>
                 </div>
             </div>
         </footer>
     </div>
 </body>
+<script src="/static/css/dashboard.js"></script>
 </html>

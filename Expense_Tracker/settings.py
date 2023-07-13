@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Expense_Tracker.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'expp', 'USER': 'root', 'PASSWORD': '1234', 'HOST': 'localhost', 'PORT': '3306', } 
+    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'expense', 'USER': 'root', 'PASSWORD': '', 'HOST': 'localhost', 'PORT': '3306', } 
 }
 
 
@@ -127,3 +127,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ORIGIN_ALLOW_ALL = True

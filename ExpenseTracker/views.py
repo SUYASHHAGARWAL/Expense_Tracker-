@@ -27,7 +27,7 @@ def session(req):
 def Expensepage(req):
     try:
         print(1)
-        userdata = req.session["USERDATA"]
+        userdata = req.session.get("USERDATA",{})
         print(2)
         print("HIIIIIII\n",userdata)
         # q="select * from expensetracker_expense where "
@@ -90,7 +90,7 @@ def CheckUserLogin(req):
     try:
         if req.method == 'GET':
             print(1)
-            userdata = req.session["USERDATA"]
+            userdata = req.session.get('USERDATA',{})
             print(2)
             q = "select * from expensetracker_user where (phone='{0}' or email='{0}') and password='{1}'".format(req.GET['phone'],req.GET['password'])
             print(q)
@@ -98,11 +98,10 @@ def CheckUserLogin(req):
             cursor.execute(q)
             record = tuple_to_dict.ParseDictMultipleRecord(cursor)
             print(record)
-            print("\n\n",record[0])
             # print("\n\n",record[0]['id'])
             global p 
             p = record[0]['id']
-            
+
             qry="select sum(Amount) from expensetracker_expense where userid={0}".format(p)
             print(qry)
             cursors = connection.cursor()
@@ -128,7 +127,6 @@ def CheckUserLogin(req):
                 return render(req,"DashBoard.html",{'data':record[0],'userdata':userdata})
     except Exception as e:
         print(e)
-
 
 @api_view(['GET','POST','DELETE']) 
 def EditDelete(req):
