@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['13.236.184.75']
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
-    'https://13.236.184.75',
+    'https://13.236.184.75:8001',
 )
 
 # Application definition
