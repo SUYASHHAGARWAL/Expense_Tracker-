@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Expense_Tracker.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'railway', 'USER': 'root', 'PASSWORD': 'keqpbtG2PBWAcZFIBwMp', 'HOST': 'containers-us-west-76.railway.app', 'PORT': '7116', } 
+    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'railway', 'USER': 'root', 'PASSWORD': 'P59dRSTW7YEVurbIeVJl', 'HOST': 'containers-us-west-72.railway.app-us-west-76.railway.app', 'PORT': '7677', } 
 }
 
 
