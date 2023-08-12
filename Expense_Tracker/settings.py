@@ -82,10 +82,9 @@ WSGI_APPLICATION = 'Expense_Tracker.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'sql6639219', 'USER': 'sql6639219', 'PASSWORD': 'fQExpEgkLW', 'HOST': 'sql6.freesqldatabase.com', 'PORT': '3306', } 
+    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'railway', 'USER': 'root', 'PASSWORD': 'keqpbtG2PBWAcZFIBwMp', 'HOST': 'containers-us-west-76.railway.app', 'PORT': '7116', } 
 }
-# import socket
-# socket.getaddrinfo('localhost', 8000)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
