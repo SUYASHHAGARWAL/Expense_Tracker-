@@ -24,10 +24,10 @@ MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-su&3$kfp*waqc@8-z_gl6*^e)t03lci%2i*p9i2+*wz)i0xuqt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['13.236.184.75']
-CORS_ORIGIN_ALLOW_ALL = False
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
     'https://localhost:8000',
     'https://13.236.184.75',
@@ -63,7 +63,7 @@ ROOT_URLCONF = 'Expense_Tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(MAIN_DIR, 'ExpenseTracker/Templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
