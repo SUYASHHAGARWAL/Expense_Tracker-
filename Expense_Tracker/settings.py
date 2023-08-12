@@ -64,7 +64,7 @@ ROOT_URLCONF = 'Expense_Tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Templates'],
+        'DIRS': [(os.path.join(MAIN_DIR,'ExpenseTracker/Templates'),)],
 
         'APP_DIRS': True,
         'OPTIONS': {
