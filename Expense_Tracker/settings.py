@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import os
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -63,9 +64,11 @@ ROOT_URLCONF = 'Expense_Tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['Templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
+
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -83,7 +86,7 @@ WSGI_APPLICATION = 'Expense_Tracker.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'railway', 'USER': 'root', 'PASSWORD': 'qmyUFrTZQU0WFy27xyBz', 'HOST': 'containers-us-west-177.railway.app', 'PORT':'5922', } 
+    'default': { 'ENGINE':'django.db.backends.mysql', 'NAME': 'railway', 'USER': 'root', 'PASSWORD': 'qmyUFrTZQU0WFy27xyBz', 'HOST': 'containers-us-west-177.railway.app', 'PORT':'5922', } 
 }
 
 
