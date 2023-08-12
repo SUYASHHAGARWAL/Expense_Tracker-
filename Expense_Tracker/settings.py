@@ -24,7 +24,7 @@ MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-su&3$kfp*waqc@8-z_gl6*^e)t03lci%2i*p9i2+*wz)i0xuqt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['13.236.184.75']
 CORS_ORIGIN_ALLOW_ALL = False
