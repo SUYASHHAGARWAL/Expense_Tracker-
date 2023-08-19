@@ -14,7 +14,7 @@
             
           
             $('#showdatabtn').click(function () {
-                $.getJSON('http://localhost:8000/api/filldata',function(data){ 
+                $.getJSON('/api/filldata',function(data){ 
                     console.log(data)
                     console.log(data.length)
                     $('#sectdisplay').css('display','block')

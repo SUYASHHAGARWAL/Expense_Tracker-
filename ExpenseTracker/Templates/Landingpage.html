@@ -26,9 +26,9 @@ $(document).ready(function () {
                 var psw = $('#password').val();
                 
                 console.log(phn,psw)
-                $.getJSON('http://localhost:8000/api/session',{phone:phn,password:psw},function(data){ 
+                $.getJSON('/api/session',{phone:phn,password:psw},function(data){ 
                     console.log(data);
-                    window.location.href = `http://localhost:8000/api/checkuserlogin?phone=${phn}&password=${psw}`
+                    window.location.href = `/api/checkuserlogin?phone=${phn}&password=${psw}`
             }) 
         })
     })
