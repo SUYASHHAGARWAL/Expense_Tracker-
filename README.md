@@ -5,6 +5,7 @@ A tool/portal that helps students/working professional manage expenses, track th
 # ->How to Run this code<-
 
 step 1 -> Clone this repo in your system 
+
 step 2-> In your terminal write the command 
       pip install -r requirements.txt
 It will install all the required dependencies in your system for this app to run.
