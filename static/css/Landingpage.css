@@ -57,16 +57,22 @@
 
 .section2 {
     background-color: rgb(201, 208, 231);
+    height: 100vh;
 
 }
 
-.boxe {
-    margin: 12px 22px;
-    width: 450px;
-}
 
 .font {
     font-size: 30px;
+}
+.boxe {
+    margin: auto;
+    font-size: 20px;
+    width: 70%;
+    height: 15%;
+    text-align: center;
+    line-height: 2rem;
+    margin-top:2rem;
 }
 
 .font-nav {
@@ -115,6 +121,7 @@
 
 .section4 {
     background-color: rgb(176, 219, 212);
+    height: 100vh;
 }
 
 /* .navcls{
@@ -369,4 +376,25 @@
     cursor: pointer;
     margin-left: 145px;
     margin-top: 25px;
+}
+
+
+.boxes{
+    height: 100vh;
+    display: flex;
+    /* align-items: center; */
+}
+
+#bbox1{
+    width: 100%;
+}
+
+#bbox2{
+    width: 100%;
+}
+
+footer{
+
+    margin-top: 2rem;
+
 }
