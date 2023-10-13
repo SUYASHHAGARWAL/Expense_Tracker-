@@ -36,8 +36,6 @@ def Expensepage(req):
         print("Error", e)
 
 
-
-
 @api_view(['GET','POST','DELETE'])
 def SubmitExpense(req):
     if req.method == 'POST':

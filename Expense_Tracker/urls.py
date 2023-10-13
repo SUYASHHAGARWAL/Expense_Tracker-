@@ -19,7 +19,7 @@ from ExpenseTracker import views
 from ExpenseTracker import Dashboardview
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'',views.LandingPage),
+    re_path(r'^api/landingpage',views.LandingPage),
     re_path(r'^api/submitexpensepage',views.Expensepage),
     re_path(r'^api/submitexpense',views.SubmitExpense),
     re_path(r'^api/dashboard',views.Dashboard),
