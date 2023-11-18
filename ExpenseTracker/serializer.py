@@ -10,4 +10,4 @@ class UserSerializer(serializers.ModelSerializer):
 class ExpenseSerializer(serializers.ModelSerializer):
     class Meta:
         model=Expense
-        fields=('id','Amount','where','Why','date_day','date_month','date_year','time','category','wasitneeded','userid')
+        fields=('id','Amount','where','Why','date','time','category','wasitneeded','userid')

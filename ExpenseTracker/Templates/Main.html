@@ -5,69 +5,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracker</title>
-    <link rel="stylesheet" href="/static/css/Main.css" type="text/css">
+    <!-- <link rel="stylesheet" href="/static/css/Main.css" type="text/css"> -->
+    <style>
+      body {
+    background-color: rgb(170, 94, 218); /* Choose your background color */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.section4 {
+    text-align: center;
+}
+
+.bbox {
+    background-color:rgb(132, 167, 178);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto; /* Center the box horizontally */
+}
+
+
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.expense-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-box {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.smit_btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.smit_btn:hover {
+    background-color: #2980b9;
+}
+
+.final_msg {
+    color: black;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+    </style>
 </head>
 
 <body>
     <main class="container mx-auto min-h-screen ">
-    <section class="section4" id="section4">
-           <div class="bbox ">
-            <h2>Write Expense</h2>
+        <section class="section4" id="section4">
+            <div class="bbox ">
+                <h2>Write Expense</h2>
                 <div class="box font">
                     <form action="/api/submitexpense" method="post" enctype="multipart/form-data">{%csrf_token%}
                         <div class="expense-area">
                             <div></div>
                             <div class="input-box">
                                 <label for="amount" class="lbl">Amount</label>
-                                <input type="text" name="Amount" id="Amount" placeholder="Enter amount you have spent" required>
+                                <input type="text" name="Amount" id="Amount" placeholder="Enter amount you have spent"
+                                    required>
                             </div>
                             <div class="input-box">
                                 <label for="where" class="lbl">Where</label>
-                                <input type="text" name="where" id="where" placeholder="Enter where have you spent" required>
+                                <select name="where" id="where" required>
+                                    <option value="" disabled selected>Select location</option>
+                                    <option value="Home">College</option>
+                                    <option value="Work">Home</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Shopping">out with friends</option>
+                                    <option value="Shopping">Other</option>
+                                    <!-- Add more options as needed -->
+                                </select>
                             </div>
                             <div class="input-box">
-                                <label for="why" class="lbl">Why</label>
-                                <input type="text" name="why" id="why" placeholder="Why you spent it" required>
+                                <label for="Why" class="lbl">Why</label>
+                                <input type="text" name="Why" id="Why" placeholder="Why you spent it" required>
                             </div>
                             <div class="input-box">
-                                <label for="date_day" class="lbl">Day</label>
-                                <input type="text" name="date_day" id="date_day" placeholder="Enter date of expenditure" required>
+                                <label for="date" class="lbl">Day</label>
+                                <input type="date" name="date" id="date" placeholder="Select date of expenditure"
+                                    required>
                             </div>
-                            <div class="input-box">
-                                <label for="month" class="lbl">Month</label>
-                                <input type="text" name="date_month" id="date_month" placeholder="Enter month of expenditure" required>
-                            </div>
-                            <div class="input-box">
-                                <label for="date_year" class="lbl">Year</label>
-                                <input type="text" name="date_year" id="date_year" placeholder="Enter year of expenditure" required>
-                            </div>
+
                             <div class="input-box">
                                 <label for="time" class="lbl">Time</label>
-                                <input type="time" name="time" id="time" placeholder="Enter time of expenditure" required>
+                                <input type="time" name="time" id="time" placeholder="Enter time of expenditure"
+                                    required>
                             </div>
                             <div class="input-box">
                                 <label for="category" class="lbl">Category</label>
-                                <input type="text" name="category" id="category" placeholder="Category of expenditure (Urgent, helped a friend, wasted, etc)" required>
+                                <select name="category" id="category" required>
+                                    <option value="" disabled selected>Select category</option>
+                                    <option value="Urgent">Urgent</option>
+                                    <option value="Helped a friend">Helped a friend</option>
+                                    <option value="Wasted">Wasted</option>
+                                    <!-- Add more options as needed -->
+                                </select>
                             </div>
                             <div class="input-box">
                                 <label for="wasitneeded" class="lbl">Was it needed</label>
-                                <input type="text" name="wasitneeded" id="wasitneeded" placeholder="Needed (Yes/No)" required>
+                                <select name="wasitneeded" id="wasitneeded" required>
+                                    <option value="" disabled selected>Select option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                    <!-- Add more options as needed -->
+                                </select>
                             </div>
-                            <div class="input-box">
+                            <div class="input-box" hidden>
                                 <label for="userid" class="lbl">User Id</label>
                                 <input type="text" name="userid" id="userid" value="{{record}}" required>
                             </div>
                         </div>
                         <button class="smit_btn" type="submit">Submit</button>
                     </form>
-                <span class="final_msg">{{message}}</span>
+                    <span class="final_msg">{{message}}</span>
                 </div>
             </div>
             </div>
         </section>
         <hr>
     </main>
-   
+
 </body>
 
 </html>
